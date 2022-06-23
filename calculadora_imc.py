@@ -54,34 +54,27 @@ Un estudio GWAS publicado en 2015 (realizado en población europea), consiguió 
 """
 
 #1. Declaramos las variables altura, peso, imc para poder realizar los cálculos y op para poder desarrollar el while
-#2. Creamos el while y llamanos a la variable op indicando que mientras no sea distinta a 'salir' siga ejecutándose
-  #3. Dentro del while llamamos a las variables altura y peso indicando que son de tipo float (decimal) y con input le pedimos al usuario que introduzca los valores
-  #4. Establecemos las condicionales con if, elif y else indicando que:
-    #si el IMC es 0, imprima (print) un error, 
-    #en el resto introducimos los valores de cada rango de IMC y pedimos que nos imprima (print) el tipo de IMC según la tabla de la OMS
-    #en else indicamos que cualquier otro dato diferente a los anteriores, impima (print) un error, para evitar cualquier fallo que pueda surgir
-  #5. Llamamos a la variable op para evitar que nos dé la respuesta en bucle y con input le pedimos al usuario que pulse cualquier tecla para seguir calculando o escriba 'salir' para salir de la calculadora.
-#6. Finalmente le decimos al programa que en caso de que el usuario escriba 'salir' (op='salir' es lo que saca a la calculadora del bucle de ejecución) imprima(print) un mensaje de despedida
-
-#1
 altura= 0                          
 peso= 0
 imc= 0
 op= 'op'
 
-#2
+#2. Creamos el while y llamanos a la variable op indicando que mientras no sea distinta a 'salir' siga ejecutándose
 while (op != 'salir'):  
-  #3            
+  #3. Dentro del while llamamos a las variables altura y peso indicando que son de tipo float (decimal)...
+      #y con input le pedimos al usuario que introduzca los valores            
   altura= float(input('Por favor, introduzca su altura en metros (0.00): ')) 
   peso= float(input('Por favor, introduzca su peso en kilogramos (00.00): '))
   imc= round(peso / altura **2 ,2)
 
-  #4
+  #4. Establecemos las condicionales con if, elif y else indicando que:     
   if (imc== 0 ):
     print('ERROR. El IMC no puede ser igual a 0')
-  else: 
+  else:
+    #si el IMC es 0, imprima (print) un error, 
     if (imc < 16):
       print('Su IMC es: ', imc, 'Indica que usted tiene PESO BAJO catalogado como DELGADEZ SEVERA. Si los datos que ha introducido son correctos, por favor, póngase en contacto con su médico con la mayor brevedad posible.')
+    #en el resto introducimos los valores de cada rango de IMC y pedimos que nos imprima (print) el tipo de IMC según la tabla de la OMS
     elif (imc >= 16 and imc <= 16.99):
       print('Su IMC es: ', imc, 'Indica que usted tiene PESO BAJO catalogado como DELGADEZ MODERADA')
     elif (imc >= 17 and imc <= 18.49):
@@ -96,10 +89,13 @@ while (op != 'salir'):
       print('Su IMC es: ', imc, 'Indica que usted tiene OBESIDAD catalogado como OBESIDAD MEDIA. Si los datos que ha introducido son correctos, por favor, póngase en contacto con su médico con la mayor brevedad posible.')
     elif (imc >= 40):
       print('Su IMC es: ', imc, 'Indica que usted tiene OBESIDAD catalogado como OBESIDAD MÓRBIDA. Si los datos que ha introducido son correctos, por favor, póngase en contacto con su médico con la mayor brevedad posible.')
+    #en else indicamos que cualquier otro dato diferente a los anteriores, impima (print) un error, para evitar cualquier fallo que pueda surgir
     else: 
       print('ERROR. Por favor, ejecute de nuevo programa') 
-  #5
+  #5. Llamamos a la variable op para evitar que nos dé la respuesta en bucle y con input le pedimos al usuario que pulse cualquier tecla para seguir calculando...
+      #...o escriba 'salir' para salir de la calculadora.
   op= input('Para realizar otro cálculo pulse cualquier tecla, para salir de la calculadora escriba "salir"')
-#6  
+#6. Finalmente le decimos al programa que en caso de que el usuario escriba 'salir' (op='salir' es lo que saca a la calculadora del bucle de ejecución)... 
+    #...imprima(print) un mensaje de despedida
 print('Calculadora apagada. Hasta pronto')
 
